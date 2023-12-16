@@ -21,6 +21,7 @@ import LogoutPage from './pages/logoutpage';
 import AuthContextProvider from "./contexts/authContext";
 import SignUpPage from "./pages/signUpPage";
 import ProtectedRoutes from "./protectedRoutes";
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -45,11 +46,11 @@ const App = () => {
           </Route>
           <Route path="/reviews/:id" element={ <MovieReviewPage /> } />
           <Route path="/movies/:id" element={<MoviePage />} />
-          <Route path="/movies/toprated" element= {<TopratedPage/>}/>
           <Route path="/movies/people" element= {<PeoplePage/>}/>
           <Route path="/people/:id" element= {<PeopleDetailPage/>}/>
-          <Route path="/TV/:id" element= {<TVDetailPage/>}/>
           <Route path="/movies/tv" element= {<TVPage/>}/>
+          <Route path="/movies/toprated" element= {<TopratedPage/>}/>
+          <Route path="/TV/:id" element= {<TVDetailPage/>}/>
           <Route path="/:page" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/logout" element={<LogoutPage />} />

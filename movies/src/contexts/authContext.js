@@ -6,7 +6,7 @@ export const AuthContext = createContext(null);
 const AuthContextProvider = (props) => {
   const existingToken = localStorage.getItem("token");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [setAuthToken] = useState(existingToken);
+  const [authToken, setAuthToken] = useState(existingToken);
   const [userName, setUserName] = useState("");
 
   //Function to put JWT token in local storage.
@@ -27,7 +27,6 @@ const AuthContextProvider = (props) => {
   const register = async (username, password) => {
     const result = await signup(username, password);
     console.log(result.code);
-    // eslint-disable-next-line eqeqeq
     return (result.code == 201) ? true : false;
   };
 
