@@ -18,7 +18,9 @@ import TVPage from "./pages/TVPage";
 import TVDetailPage from "./pages/TVDetailPage";
 import LoginPage from './pages/loginPage'; 
 import LogoutPage from './pages/logoutpage'; 
-
+import AuthContextProvider from "./contexts/authContext";
+import SignUpPage from "./pages/signUpPage";
+import ProtectedRoutes from "./protectedRoutes";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -33,11 +35,14 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
+      <AuthContextProvider>
         <SiteHeader />
         <MoviesContextProvider>
         <Routes>
           <Route path="/movies/favorites" element={<FavoriteMoviesPage />} />
+          <Route element={<ProtectedRoutes />}>
           <Route path="/movies/upcoming" element={<UpcomingMoviePage />} /> 
+          </Route>
           <Route path="/reviews/:id" element={ <MovieReviewPage /> } />
           <Route path="/movies/:id" element={<MoviePage />} />
           <Route path="/movies/toprated" element= {<TopratedPage/>}/>
@@ -50,8 +55,10 @@ const App = () => {
           <Route path="/logout" element={<LogoutPage />} />
           <Route path="*" element={ <Navigate to="/1" /> } />
           <Route path="/reviews/form" element={ <AddMovieReviewPage /> } />
+          <Route path="/signup" element={ <SignUpPage /> } />
         </Routes>
         </MoviesContextProvider>
+        </AuthContextProvider>
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
