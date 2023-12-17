@@ -9,6 +9,7 @@ import moviesRouter from './api/movies';   //import movies router
 import authenticate from './authenticate';
 import TVRouter from './api/TV';
 dotenv.config();
+import peopleRouter from './api/people';
 
 const app = express();
 const port = process.env.PORT; 
@@ -16,8 +17,8 @@ const port = process.env.PORT;
 app.use(cors());
 app.use(express.json());
 app.use('/api/users', usersRouter);
-app.use('/api/people', peopleRouter);
 app.use('/api/TV', TVRouter);
+app.use('/api/people', peopleRouter);
 app.use('/api/movies', moviesRouter); //ADD THIS BEFORE THE DEFAULT ERROR HANDLER.
 app.use(defaultErrHandler);
 // app.use('/api/movies',authenticate,  moviesRouter);
