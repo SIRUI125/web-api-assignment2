@@ -150,18 +150,20 @@ export const getPeopleimages = (id) => {
         });
     }
     export const getTV = () => {
+        const TMDB_KEY = '77be32545d51c7f01f64a62df6ce4487'; 
         return fetch(
-            `https://api.themoviedb.org/3/tv/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+            `https://api.themoviedb.org/3/tv/popular?api_key=${TMDB_KEY}&language=en-US&page=1`
         ).then((response) => {
             if (!response.ok) {
                 throw new Error(response.json().message);
             }
             return response.json();
         })
-            .catch((error) => {
-                throw error
-            });
+        .catch((error) => {
+            throw error
+        });
     };
+    
     export const getTVDetail = (id) => {
         return fetch(
             `https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1&language=en-US`
@@ -207,7 +209,7 @@ export const getPeopleimages = (id) => {
         }    
         export const getMovies = () => {
             return fetch(
-                `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+                `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMDB_KEY}&language=en-US&page=1`
             ).then((response) => {
                 if (!response.ok) {
                     throw new Error(response.json().message);
@@ -287,4 +289,4 @@ export const getPeopleimages = (id) => {
                     throw error
                 });
             }
-            
+    
