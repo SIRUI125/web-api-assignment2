@@ -94,18 +94,22 @@ export const getMovie = (args) => {
         
 };
 export const gettopratedMovie = () => {
-  return fetch(
-    `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
-    ).then((response) => {
+  return fetch(`/api/movies/tmdb/toprated`)
+    .then((response) => {
+      console.log(response);
       if (!response.ok) {
-        throw new Error(response.json().message);
+        return response.json().then((json) => {
+          throw new Error(json.message || 'Server error');
+        });
       }
       return response.json();
     })
     .catch((error) => {
-       throw error
+      console.error('Error fetching top rated movies:', error);
+      throw error;
     });
-  };
+};
+
 
   export const getpeople = () => {
     return fetch(
@@ -245,30 +249,29 @@ export const gettopratedMovie = () => {
         return response.json();
     };
     export const addFavorite = (username, newFavorite) => {
-      return fetch(`/api/users/${username}/favorites`, {
+    return fetch(`/api/users/${username}/favorites`, {
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      method: 'post',
+      body: JSON.stringify({ username: username, newFavorite: newFavorite })
+    }).then(res => res.json())
+  };
+
+  export const getFavorites = async (username) => {
+    return fetch(`/api/users/${username}/favorites`, {
         headers: {
             'Content-Type': 'application/json'
         },
-        method: 'post',
-        body: JSON.stringify({ username: username, newFavorite: newFavorite })
-      }).then(res => res.json())
-    };
-  
-    export const getFavorites = async (username) => {
-      return fetch(`/api/users/${username}/favorites`, {
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          method: 'get'}).then(res => res.json())
-    };
-  
-    export const deleteFavorite = (username, movie) => {
-      return fetch(`/api/users/${username}/movie/${movie.id}/favourites`, {
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        method: 'post',
-        body: JSON.stringify({ movie })
-      }).then(res => res.json())
-    };
-  
+        method: 'get'}).then(res => res.json())
+  };
+
+  export const deleteFavorite = (username, movie) => {
+    return fetch(`/api/users/${username}/movie/${movie.id}/favourites`, {
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      method: 'post',
+      body: JSON.stringify({ movie })
+    }).then(res => res.json())
+  };

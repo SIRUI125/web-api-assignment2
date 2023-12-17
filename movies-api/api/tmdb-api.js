@@ -32,17 +32,22 @@ export const getGenres = async () => {
 };
 export const getTopratedMovies = () => {
     return fetch(
-        `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
-    ).then((response) => {
+        `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.TMDB_KEY}&language=en-US&page=1`
+    )
+    .then((response) => {
         if (!response.ok) {
-            throw new Error(response.json().message);
+            return response.json().then((json) => {
+                throw new Error(json.message || 'Error fetching top rated movies');
+            });
         }
         return response.json();
     })
-        .catch((error) => {
-            throw error
-        });
+    .catch((error) => {
+        console.error('Error:', error);
+        throw error;
+    });
 };
+
 
 export const getNowPlayingMovies = () => {
     return fetch(
@@ -282,3 +287,4 @@ export const getPeopleimages = (id) => {
                     throw error
                 });
             }
+            
