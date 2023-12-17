@@ -6,6 +6,8 @@ import {getGenres} from '../tmdb-api';
 import { getTopratedMovies } from '../tmdb-api';
 import { getNowPlayingMovies } from '../tmdb-api';
 import { getLatestMovies } from '../tmdb-api';
+
+
 const router = express.Router();
 
 router.get('/', asyncHandler(async (req, res) => {
