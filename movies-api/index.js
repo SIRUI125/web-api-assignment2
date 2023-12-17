@@ -4,6 +4,7 @@ import cors from 'cors';
 import usersRouter from './api/users';
 import './db';
 import defaultErrHandler from './errHandler'
+import TVRouter from './api/TV';
 import moviesRouter from './api/movies';   //import movies router
 import authenticate from './authenticate';
 import peopleRouter from './api/people';
@@ -17,6 +18,7 @@ app.use(cors());
 app.use(express.json());
 app.use('/api/users', usersRouter);
 app.use('/api/people', peopleRouter);
+app.use('/api/TV', TVRouter);
 app.use('/api/movies', moviesRouter); //ADD THIS BEFORE THE DEFAULT ERROR HANDLER.
 app.use(defaultErrHandler);
 app.use('/api/movies',authenticate,  moviesRouter);
