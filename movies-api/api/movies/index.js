@@ -1,9 +1,9 @@
 import movieModel from './movieModel';
 import asyncHandler from 'express-async-handler';
 import express from 'express';
-import { getTV, getUpcomingMovies} from '../tmdb-api';
+import {getUpcomingMovies,getMovie} from '../tmdb-api';
 import {getGenres} from '../tmdb-api';
-import {getTopratedMovies} from '../tmdb-api';
+
 const router = express.Router();
 
 router.get('/', asyncHandler(async (req, res) => {
@@ -30,7 +30,7 @@ router.get('/', asyncHandler(async (req, res) => {
 // Get movie details
 router.get('/:id', asyncHandler(async (req, res) => {
     const id = parseInt(req.params.id);
-    const movie = await movieModel.findByMovieDBId(id);
+    const movie = await getMovie(id);
     if (movie) {
         res.status(200).json(movie);
     } else {
@@ -45,4 +45,5 @@ router.get('/tmdb/genres' ,asyncHandler(async (req, res) => {
     const Genres = await getGenres();
     res.status(200).json(Genres);
 }));
+
 export default router;
