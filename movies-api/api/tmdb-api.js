@@ -51,7 +51,7 @@ export const getTopratedMovies = () => {
 
 export const getNowPlayingMovies = () => {
     return fetch(
-        `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+        `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.TMDB_KEY}&language=en-US&page=1`
     ).then((response) => {
         if (!response.ok) {
             throw new Error(response.json().message);
@@ -65,7 +65,7 @@ export const getNowPlayingMovies = () => {
 
 export const getLatestMovies = () => {
     return fetch(
-        `https://api.themoviedb.org/3/movie/latest?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
+        `https://api.themoviedb.org/3/movie/latest?api_key=${process.env.TMDB_KEY}&language=en-US`
     ).then((response) => {
         if (!response.ok) {
             throw new Error(response.json().message);
@@ -79,7 +79,7 @@ export const getLatestMovies = () => {
 
 export const getPopularPeople = () => {
     return fetch(
-        `https://api.themoviedb.org/3/person/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+        `https://api.themoviedb.org/3/person/popular?api_key=${process.env.TMDB_KEY}&language=en-US&page=1`
     ).then((response) => {
         if (!response.ok) {
             throw new Error(response.json().message);
@@ -94,7 +94,7 @@ export const getPopularPeople = () => {
 
 export const getPeopleDetail = (id) => {
     return fetch(
-        `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
+        `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.TMDB_KEY}&language=en-US`
     ).then((response) => {
         if (!response.ok) {
             throw new Error(response.json().message);
@@ -109,7 +109,7 @@ export const getPeopleDetail = (id) => {
 
 export const getPeopleMovie_credit = (id) => {
     return fetch(
-        `https://api.themoviedb.org/3/person/${id}/movie_credits?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
+        `https://api.themoviedb.org/3/person/${id}/movie_credits?api_key=${process.env.TMDB_KEY}&language=en-US`
     ).then((response) => {
         if (!response.ok) {
             throw new Error(response.json().message);
@@ -124,7 +124,7 @@ export const getPeopleMovie_credit = (id) => {
 
 export const getLatestPeople = () => {
     return fetch(
-        `https://api.themoviedb.org/3/person/latest?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
+        `https://api.themoviedb.org/3/person/latest?api_key=${process.env.TMDB_KEY}&language=en-US`
     ).then((response) => {
         if (!response.ok) {
             throw new Error(response.json().message);
@@ -138,7 +138,7 @@ export const getLatestPeople = () => {
 
 export const getPeopleimages = (id) => {
     return fetch(
-        `https://api.themoviedb.org/3/person/${id}/images?api_key=${process.env.REACT_APP_TMDB_KEY}`
+        `https://api.themoviedb.org/3/person/${id}/images?api_key=${process.env.TMDB_KEY}`
     ).then((response) => {
         if (!response.ok) {
             throw new Error(response.json().message);
@@ -166,7 +166,7 @@ export const getPeopleimages = (id) => {
     
     export const getTVDetail = (id) => {
         return fetch(
-            `https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1&language=en-US`
+            `https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.TMDB_KEY}&language=en-US&page=1&language=en-US`
         ).then((response) => {
             if (!response.ok) {
                 throw new Error(response.json().message);
@@ -181,7 +181,7 @@ export const getPeopleimages = (id) => {
     
     export const getSimilarTVshows = (id) => {
         return fetch(
-            `https://api.themoviedb.org/3/tv/${id}/similar?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+            `https://api.themoviedb.org/3/tv/${id}/similar?api_key=${process.env.TMDB_KEY}&language=en-US&page=1`
         ).then((response) => {
             if (!response.ok) {
                 throw new Error(response.json().message);
@@ -196,7 +196,7 @@ export const getPeopleimages = (id) => {
     
     export const getTVReviews = (id) => {
         return fetch(
-            `https://api.themoviedb.org/3/tv/${id}/reviews?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+            `https://api.themoviedb.org/3/tv/${id}/reviews?api_key=${process.env.TMDB_KEY}&language=en-US&page=1`
         ).then((response) => {
             if (!response.ok) {
                 throw new Error(response.json().message);
@@ -222,7 +222,7 @@ export const getPeopleimages = (id) => {
         };
         export const getMovieDetail = (id) => {
             return fetch(
-                `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
+                `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.TMDB_KEY}&language=en-US`
             ).then((response) => {
                 if (!response.ok) {
                     throw new Error(response.json().message);
@@ -236,7 +236,7 @@ export const getPeopleimages = (id) => {
         };
         export const getTVGenres = (id) => {
             return fetch(
-                `https://api.themoviedb.org/3/genre/tv/list?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
+                `https://api.themoviedb.org/3/genre/tv/list?api_key=${process.env.TMDB_KEY}&language=en-US`
             ).then((response) => {
                 if (!response.ok) {
                     throw new Error(response.json().message);
@@ -250,7 +250,7 @@ export const getPeopleimages = (id) => {
         };
         export const getMovieImages = (id) => {
             return fetch(
-                `https://api.themoviedb.org/3/movie/${id}/images?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
+                `https://api.themoviedb.org/3/movie/${id}/images?api_key=${process.env.TMDB_KEY}&language=en-US`
             ).then((response) => {
                 if (!response.ok) {
                     throw new Error(response.json().message);
@@ -264,7 +264,7 @@ export const getPeopleimages = (id) => {
         };
         export const getMovieGenres = () => {
             return fetch(
-                `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
+                `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.MDB_KEY}&language=en-US`
             ).then((response) => {
                 if (!response.ok) {
                     throw new Error(response.json().message);
@@ -278,7 +278,7 @@ export const getPeopleimages = (id) => {
         
         export const getMovieReviews = (id) => {
             return fetch(
-                `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+                `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${process.env.TMDB_KEY}&language=en-US&page=1`
             ).then((response) => {
                 if (!response.ok) {
                     throw new Error(response.json().message);
@@ -289,4 +289,19 @@ export const getPeopleimages = (id) => {
                     throw error
                 });
             }
-    
+            export const getpeople = () => {
+                    return fetch(
+                      `https://api.themoviedb.org/3/person/popular?api_key=${process.env.TMDB_KEY}&language=en-US&page=1`
+                    )
+                      .then(async (response) => {
+                        if (!response.ok) {
+                          const errorData = await response.json();
+                          const errorMessage = errorData?.message || 'Error fetching popular people';
+                          throw new Error(errorMessage);
+                        }
+                        return response.json();
+                      })
+                      .catch((error) => {
+                        throw error;
+                      });
+                  };
