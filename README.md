@@ -40,41 +40,67 @@ People need to verify by registering and then logging in,then the aauthenticatio
 ## Integrating with React App
 
 Movies:
+
 GET /api/movies/ -get a lot of movies from tmdb
+
 POST /api/movies/ -add the movie into the movie list
+
 GET /api/movies/tmdb/movies/:id/reviews -get the review of some movies
+
 POST /api/movies/tmdb/movies/:id/reviews -add the movie into movie list
+
 GET /api/movies/:id/ -get the details of some movies
+
 GET /api/movies/tmdb/movies/:id/images -get movies images of the movies
+
 GET /api/movies/tmdb/upcoming -get twenty upcoming movies to list in the upcoming page
+
 GET /api/movies/tmdb/toprated -get some toprated movies to list in the toprated page
 
 People:get some details about the people part
+
 GET /api/people//tmdb/popular -get popular people to the peoplepage
+
 GET /api/people/tmdb/people/:id/ -get people's details to the peopledetail page
+
 GET /api/people/tmdb/people/:id/images -get people's images to the peopledetail page
 
 TV:get some details about the TV part
+
 GET /api/TV/tmdb/popular -get twenty TVs to the TV page
+
 GET /api/TV/tmdb/TV/:id/ -get TV's detail to the TVdetail page
+
 GET /api/TV/tmdb/TV/:id/similar -get TV's similar images to the TVdetail page
+
 GET /api/TV/tmdb/TV/:id/reviews -get TV's reviews to the TV in the app
+
 GET /api/TV/tmdb/TV/:id/genres -get TV's genres to the TV in the app
 
 Genres:get some details about the genres about the movies and TVs
+
 GET /api/genres -get all of the genres about the movies
+
 POST /api/genres -adds the movie genres
+
 PUT /api/genres/:id/ -update the movie genres
 
 Users:create some users to authenticate the app
+
 GET /api/users -get the user information for the app
+
 POST /api/users -add the new user to the app
+
 PUT /api/users/:id/ -update the users information
+
 GET /api/user/:username/favorites -get user's favorites movies
+
 POST /api/user/:username/favorites -add the new user to the app
+
 POST /api/reviews -add the new review to the app
 
 Reviews
+
 GET /api/reviews -get the reviews information for the app
 
 
