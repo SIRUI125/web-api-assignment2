@@ -289,19 +289,4 @@ export const getPeopleimages = (id) => {
                     throw error
                 });
             }
-            export const getpeople = () => {
-                    return fetch(
-                      `https://api.themoviedb.org/3/person/popular?api_key=${process.env.TMDB_KEY}&language=en-US&page=1`
-                    )
-                      .then(async (response) => {
-                        if (!response.ok) {
-                          const errorData = await response.json();
-                          const errorMessage = errorData?.message || 'Error fetching popular people';
-                          throw new Error(errorMessage);
-                        }
-                        return response.json();
-                      })
-                      .catch((error) => {
-                        throw error;
-                      });
-                  };
+    
