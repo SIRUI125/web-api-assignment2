@@ -7,12 +7,12 @@ Name: Sirui Yao
 A bullet-point list of the ADDITIONAL features you have implemented in the API **THAT WERE NOT IN THE LABS** (or modifications to existing features)
  
  + Authentication like login and sign up 
- + More new API routes, including parameterised URL.
- + More new TMDB API routes with parameterised URL.
+ + More new API routes, including parameterised URL
+ + More new TMDB API routes with parameterised URL
  + Add new favorite function to assignment
- + Almost fully React integration of GET and POST data to API.
- + Simple recommend algorithm to implement a recommender.
- + Add toprated and latest movies endpoint
+ + Almost fully React integration of GET and POST data from frontend
+ + Simple recommend algorithm to implement a recommender
+ + Add toprated and latest movies related endpoints
  + More API routes to my movies-api
  + Protect routes to some pages
  + Make use of express middleware like error handling
@@ -36,6 +36,7 @@ You can find my API from the swaggerhub,the url is as follows:
 The routes below are all protected:/movies/tv/page  /movies/upcoming/page /movies/toprated 
 Protected by passport sessions:/api/movies/tmdb and /api/people 
 People need to verify by registering and then logging in,then the aauthentication will be received from api. Otherwise they will not have permission to view some pages.
+
 ## Integrating with React App
 
 Movies:
