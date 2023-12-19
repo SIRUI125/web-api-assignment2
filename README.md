@@ -35,8 +35,7 @@ You can find my API from the swaggerhub,the url is as follows:
 
 The routes below are all protected:/movies/tv/page  /movies/upcoming/page /movies/toprated 
 Protected by passport sessions:/api/movies/tmdb and /api/people 
-People need to verify by registering and then logging in,then the aauthentication will be received from api. Otherwise they will not have permission to view the page.
-
+People need to verify by registering and then logging in,then the aauthentication will be received from api. Otherwise they will not have permission to view some pages.
 ## Integrating with React App
 
 Movies:
