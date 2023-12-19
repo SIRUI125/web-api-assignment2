@@ -1,53 +1,83 @@
 # Assignment 2 - Web API.
 
-Name: Your Name
+Name: Sirui Yao
 
 ## Features.
 
 A bullet-point list of the ADDITIONAL features you have implemented in the API **THAT WERE NOT IN THE LABS** (or modifications to existing features)
  
- + Feature 1 
- + Feature 2 
- + Feature 3 
- + etc
+ + Authentication like login and sign up 
+ + More new API routes, including parameterised URL.
+ + More new TMDB API routes with parameterised URL.
+ + Add new favorite function to assignment
+ + Almost fully React integration of GET and POST data to API.
+ + Simple recommend algorithm to implement a recommender.
+ + Add toprated and latest movies endpoint
+ + More API routes to my movies-api
+ + Protect routes to some pages
+ + Make use of express middleware like error handling
+ + Apply password protection by using bcrypt
 
 ## Setup requirements.
-
-[ Outline any non-standard setup steps necessary to run your app locally after cloning the repo.]
+I use npm install bcrypt-nodejs to my assignment,bcrypt-nodejs is a library for password encryption, which provides a secure way to store and compare passwords.
 
 ## API Configuration
 
-Describe any configuration that needs to take place before running the API. For example, creating an `.env` file and what variables to put in it. Give an example of how this might be done.
-
-REMEMBER: DON'T PUT YOUR OWN USERNAMES/PASSWORDS/AUTH KEYS IN THE README OR ON GITHUB, just placeholders as indicated below:
-
-______________________
-NODEENV=development
-PORT=8080
-HOST=
-mongoDB=YourMongoURL
-seedDb=true
-secret=YourJWTSecret
-______________________
+Create a .env file in the web-api folder as below:
+NODE_ENV=development PORT=8080 HOST=localhost mongoDB=YourMongoURL seedDb=true secret=YourJWTSecret REACT_APP_TMDB_KEY=YourReactMovieKey
 
 ## API Design
-Give an overview of your web API design, perhaps similar to the following: 
 
-- /api/movies | GET | Gets a list of movies 
-- /api/movies/{movieid} | GET | Gets a single movie 
-- /api/movies/{movieid}/reviews | GET | Get all reviews for movie 
-- /api/movies/{movieid}/reviews | POST | Create a new review for Movie 
-
-If you have your API design on an online platform or graphic, please link to it (e.g. [Swaggerhub](https://app.swaggerhub.com/)).
+You can find my API from the swaggerhub,the url is as follows:
+[Swaggerhub](https://app.swaggerhub.com/apis-docs/20095250/movie-list/1.0.0#/)
 
 ## Security and Authentication
 
-Give details of authentication/security implemented on the API (e.g. passport/sessions). Indicate which routes are protected.
+The routes below are all protected:/movies/tv/page  /movies/upcoming/page /movies/toprated 
+Protected by passport sessions:/api/movies/tmdb and /api/people 
+People need to verify by registering and then logging in,then the aauthentication will be received from api. Otherwise they will not have permission to view the page.
 
 ## Integrating with React App
 
-Describe how you integrated your React app with the API. List the views that use your Web API instead of the TMDB API. Describe any other updates to the React app from Assignment One.
+Movies:
+GET /api/movies/ -get a lot of movies from tmdb
+POST /api/movies/ -add the movie into the movie list
+GET /api/movies/tmdb/movies/:id/reviews -get the review of some movies
+POST /api/movies/tmdb/movies/:id/reviews -add the movie into movie list
+GET /api/movies/:id/ -get the details of some movies
+GET /api/movies/tmdb/movies/:id/images -get movies images of the movies
+GET /api/movies/tmdb/upcoming -get twenty upcoming movies to list in the upcoming page
+GET /api/movies/tmdb/toprated -get some toprated movies to list in the toprated page
+
+People:get some details about the people part
+GET /api/people//tmdb/popular -get popular people to the peoplepage
+GET /api/people/tmdb/people/:id/ -get people's details to the peopledetail page
+GET /api/people/tmdb/people/:id/images -get people's images to the peopledetail page
+
+TV:get some details about the TV part
+GET /api/TV/tmdb/popular -get twenty TVs to the TV page
+GET /api/TV/tmdb/TV/:id/ -get TV's detail to the TVdetail page
+GET /api/TV/tmdb/TV/:id/similar -get TV's similar images to the TVdetail page
+GET /api/TV/tmdb/TV/:id/reviews -get TV's reviews to the TV in the app
+GET /api/TV/tmdb/TV/:id/genres -get TV's genres to the TV in the app
+
+Genres:get some details about the genres about the movies and TVs
+GET /api/genres -get all of the genres about the movies
+POST /api/genres -adds the movie genres
+PUT /api/genres/:id/ -update the movie genres
+
+Users:create some users to authenticate the app
+GET /api/users -get the user information for the app
+POST /api/users -add the new user to the app
+PUT /api/users/:id/ -update the users information
+GET /api/user/:username/favorites -get user's favorites movies
+POST /api/user/:username/favorites -add the new user to the app
+POST /api/reviews -add the new review to the app
+
+Reviews
+GET /api/reviews -get the reviews information for the app
+
 
 ## Independent learning (if relevant)
+I use bcrypt to protect keywords.It is a Node.js module for password hashing. This module implements the bcrypt encryption algorithm, allowing you to securely store passwords in Node.js applications. When a user registers, you can use bcrypt to generate a hash of the password and then store this hash in the database. 
 
-Briefly explain any non-standard features developed for the app.   
