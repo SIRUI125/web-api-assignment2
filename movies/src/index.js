@@ -44,12 +44,12 @@ const App = () => {
           <Route element={<ProtectedRoutes />}>
           <Route path="/movies/upcoming" element={<UpcomingMoviePage />} /> 
           <Route path="/movies/toprated" element= {<TopratedPage/>}/>
+          <Route path="/movies/tv" element= {<TVPage/>}/>
           </Route>
           <Route path="/reviews/:id" element={ <MovieReviewPage /> } />
           <Route path="/movies/people" element= {<PeoplePage/>}/>
           <Route path="/people/:id" element= {<PeopleDetailPage/>}/>
           <Route path="/movies/:id" element={<MoviePage />} />
-          <Route path="/movies/tv" element= {<TVPage/>}/>
           <Route path="/TV/:id" element= {<TVDetailPage/>}/>
           <Route path="/:page" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />

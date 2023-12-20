@@ -1,7 +1,7 @@
 import React, { useState ,  useContext} from "react";
 import { AuthContext } from "../contexts/authContext";
 import { getFavorites, addFavorite, deleteFavorite } from "../api/tmdb-api";
-
+import {writeReview} from "../api/tmdb-api"
 export const MoviesContext = React.createContext(null);
 
 const MoviesContextProvider = (props) => {
@@ -31,6 +31,7 @@ const MoviesContextProvider = (props) => {
   const addReview = (movie, review) => {
     setMyReviews( {...myReviews, [movie.id]: review } )
   };
+  
   console.log(myReviews);
   // We will use this function in a later section
 
