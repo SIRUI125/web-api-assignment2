@@ -6,13 +6,12 @@ Name: Sirui Yao
 A bullet-point list of the ADDITIONAL features you have implemented in the API **THAT WERE NOT IN THE LABS** (or modifications to existing features)
  
  + Authentication like login and sign up 
- + More new API routes, including parameterised URL
  + More new TMDB API routes with parameterised URL
  + Add new favorite function to assignment
  + Almost fully React integration of GET and POST data from frontend
  + Simple recommend algorithm to implement a recommender
  + Add toprated and latest movies related endpoints
- + More API routes to my movies-api
+ + More API routes from frontend to movies-api
  + Protect routes to some pages
  + Make use of express middleware like error handling
  + Apply password protection by using bcrypt
@@ -27,7 +26,7 @@ NODE_ENV=development PORT=8080 HOST=localhost mongoDB=YourMongoURL seedDb=true s
 
 ## API Design
 
-You can find my API from the swaggerhub,the url is as follows:
+You can find my API from the Swaggerhub,the url is as follows:
 [Swaggerhub](https://app.swaggerhub.com/apis-docs/20095250/movie-list/1.0.0#/)
 
 ## Security and Authentication
@@ -104,5 +103,6 @@ GET /api/reviews -get the reviews information for the app
 
 
 ## Independent learning (if relevant)
+
 I use bcrypt to protect keywords.It is a Node.js module for password hashing. This module implements the bcrypt encryption algorithm, allowing you to securely store passwords in Node.js applications. When a user registers, you can use bcrypt to generate a hash of the password and then store this hash in the database. 
 Github:https://github.com/SIRUI125/web-api-assignment2
