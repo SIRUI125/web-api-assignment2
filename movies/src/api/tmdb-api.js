@@ -2,8 +2,7 @@ export const getMovies = (args) => {
   const [, pages] = args.queryKey;
   const { page } = pages;
   return fetch(
-    `/api/movies/tmdb/popular`
-  )
+    `/api/movies/tmdb/popular`)
     .then(async (response) => {
       if (!response.ok) {
         const errorData = await response.json();
