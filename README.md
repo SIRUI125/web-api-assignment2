@@ -8,13 +8,13 @@ A bullet-point list of the ADDITIONAL features you have implemented in the API *
  + Authentication like login and sign up 
  + More new TMDB API routes with parameterised URL
  + Add new favorite function to assignment
- + Almost fully React integration of GET and POST data from frontend
+ + Fully React integration of GET and POST data from frontend
  + Simple recommend algorithm to implement a recommender
  + Add toprated and latest movies related endpoints
- + More API routes from frontend to movies-api
  + Protect routes to some pages
  + Make use of express middleware like error handling
  + Apply password protection by using bcrypt
+ + API documentation by Swaggerhub
 
 ## Setup requirements.
 I use npm install bcrypt-nodejs to my assignment,bcrypt-nodejs is a library for password encryption, which provides a secure way to store and compare passwords.
