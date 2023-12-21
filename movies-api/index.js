@@ -9,7 +9,7 @@ import moviesRouter from './api/movies';   //import movies router
 import authenticate from './authenticate';
 import peopleRouter from './api/people';
 import reviewsRoute from './api/reviews';
-
+import genresRouter from './api/genres';
 dotenv.config();
 
 const app = express();
@@ -21,6 +21,7 @@ app.use('/api/users', usersRouter);
 app.use('/api/people', peopleRouter);
 app.use('/api/TV', TVRouter);
 app.use('/api/reviews', reviewsRoute);
+app.use('/api/genres', genresRouter);
 app.use('/api/movies', moviesRouter); //ADD THIS BEFORE THE DEFAULT ERROR HANDLER.
 app.use(defaultErrHandler);
 app.use('/api/movies',authenticate,  moviesRouter);

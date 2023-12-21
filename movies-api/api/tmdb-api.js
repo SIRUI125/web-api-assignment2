@@ -30,6 +30,7 @@ export const getGenres = async () => {
         throw error;
     }
 };
+
 export const getTopratedMovies = () => {
     return fetch(
         `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.TMDB_KEY}&language=en-US&page=1`
@@ -150,9 +151,8 @@ export const getPeopleimages = (id) => {
         });
     }
     export const getTV = () => {
-        const TMDB_KEY = '77be32545d51c7f01f64a62df6ce4487'; 
         return fetch(
-            `https://api.themoviedb.org/3/tv/popular?api_key=${TMDB_KEY}&language=en-US&page=1`
+            `https://api.themoviedb.org/3/tv/popular?api_key=${process.env.TMDB_KEY}&language=en-US&page=1`
         ).then((response) => {
             if (!response.ok) {
                 throw new Error(response.json().message);
